@@ -1,0 +1,20 @@
+﻿@inherits VerticalTabControlBase
+<div class="row">
+    <div class="col-md-2">
+        <ul class="nav nav-pills flex-column">
+            @foreach (var tabPage in Pages)
+            {
+                <li class="nav-item">
+                    <a class="tab-nav-link @GetActiveClass(tabPage)" onclick="@(() => ActivatePage(tabPage))"
+                       aria-current="page">@tabPage?.Text </a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <CascadingValue Value="this">
+            @ChildContent
+        </CascadingValue>
+    </div>
+</div>
+
