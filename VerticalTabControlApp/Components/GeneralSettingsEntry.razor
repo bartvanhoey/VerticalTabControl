@@ -1,0 +1,172 @@
+<h3>@Title</h3>
+
+<EditForm EditContext="@EditContext">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <div class="accordion accordion-flush" id="idAccordionGeneralSettings">
+        @foreach (var item in AccordionItems)
+        {
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button @onclick="() => ToggleAccordion(item)" class="accordion-button @item.CssCollapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                            aria-expanded="@item.IsAriaExpanded" aria-controls="collapseOne">
+                        @item.Title
+                    </button>
+                </h2>
+                <div class="accordion-collapse collapse @item.CssShow" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        @if (item.Title == General)
+                        {
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idDefaultDataPath">Default data path</label>
+                                </div>
+                                <div class="col-6">
+                                    <InputText @bind-Value="@Model.DefaultDataPath" type="text" class="form-control"
+                                               id="idDefaultDataPath"/>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idBackupAscentRtso">Backup ascent RTSO file additionally </label>
+                                </div>
+                                <div class="col-6">
+                                    <InputCheckbox @bind-Value="@Model.IsBackupAscentRtso" type="text"
+                                                   id="idBackupAscentRtso"/>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idBackupZipFile">Backup ascent zip file additionally </label>
+                                </div>
+                                <div class="col-6">
+                                    <InputCheckbox @bind-Value="@Model.IsBackupZipFile" type="text"
+                                                   id="idBackupZipFile"/>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idDirectory">Directory</label>
+                                </div>
+                                <div class="col-6">
+                                    <InputText @bind-Value="@Model.Directory" type="text" class="form-control"
+                                               id="idDirectory"/>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idUseRawDataValidation">Use raw data validation before the
+                                        ascent</label>
+                                </div>
+                                <div class="col-6">
+                                    <InputCheckbox @bind-Value="@Model.IsRawDataValidationBeforeAscent" type="text"
+                                                   id="idUseRawDataValidation"/>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idAdjustSystemTimeByGps">Adjust System Time by GPS</label>
+                                </div>
+                                <div class="col-6">
+                                    <InputCheckbox @bind-Value="@Model.IsAdjustSystemTimeByGps" type="text"
+                                                   id="idAdjustSystemTimeByGps"/>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idAdjustSystemTimeByNtpServer">Adjust System Time by NTP Server</label>
+                                </div>
+                                <div class="col-6">
+                                    <InputCheckbox @bind-Value="@Model.IsAdjustSystemTimeByNtp" type="text"
+                                                   id="idAdjustSystemTimeByNtpServer"/>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idNtpServer">NTP Server</label>
+                                </div>
+                                <div class="col-6">
+                                    <InputText @bind-Value="@Model.NtpServer" type="text" class="form-control"
+                                               id="idNtpServer"/>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idMenuType">Menu Type</label>
+                                </div>
+                                <div class="col-6">
+                                    <InputText @bind-Value="@Model.MenuType" type="text" class="form-control"
+                                               id="idMenuType"/>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idNumberOfSondes">Number of sondes</label>
+                                </div>
+                                <div class="col-6">
+                                    <InputNumber @bind-Value="@Model.NumberOfSondes" type="text" class="form-control"
+                                                 id="idNumberOfSondes"/>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idRepeatAscentIfNecessary">Repeat ascent if necessary</label>
+                                </div>
+                                <div class="col-6">
+                                    <InputCheckbox @bind-Value="@Model.IsRepeatAscentIfNecessary" type="text"
+                                                   id="idRepeatAscentIfNecessary"/>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.Title == StartDetectionSettings)
+                        {
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idAllowAdjustingDetectedStartTime">Allow adjusting detected start time</label>
+                                </div>
+                                <div class="col-6">
+                                    <InputCheckbox @bind-Value="@Model.IsAllowAddingDetectedStartTime"  type="text"
+                                                   id="idAllowAdjustingDetectedStartTime"/>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idOpenGroundDataWindowAfterStart">Open ground data window after start was...</label>
+                                </div>
+                                <div class="col-6">
+                                    <InputCheckbox @bind-Value="@Model.IsOpenGroundDataWindowAfterStart"  type="text"
+                                                   id="idOpenGroundDataWindowAfterStart"/>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.Title == ShutdownSettings)
+                        {
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idShutdownAfterSoundingWasStopped">Shut down after sounding was stopped</label>
+                                </div>
+                                <div class="col-6">
+                                    <InputCheckbox @bind-Value="@Model.IsShutdownAfterSoundingWasStopped"  type="text"
+                                                   id="idShutdownAfterSoundingWasStopped"/>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="idDelay">Delay (min)</label>
+                                </div>
+                                <div class="col-6">
+                                    <InputNumber @bind-Value="@Model.DelayInMinutes" type="text" class="form-control"
+                                                 id="idDelay"/>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</EditForm>

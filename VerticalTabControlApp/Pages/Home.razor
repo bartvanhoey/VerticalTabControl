@@ -1,16 +1,15 @@
 ﻿@page "/"
 @using VerticalTabControlApp.Components
+@using VerticalTabControlApp.Components.Refactored
 
 <PageTitle>Home</PageTitle>
 
 <VerticalTabControl>
-    <VerticalTabPage Text="First page">
-        <h2>Page 1</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata</p>
+    <VerticalTabPage Text="General">
+        <GeneralSettingsEntry Title="General Settings" />
     </VerticalTabPage>
-    <VerticalTabPage Text="Second page">
-        <h2>Page 2</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata</p>
+    <VerticalTabPage Text="Refactored General">
+        <RefactoredGeneralSettingsEntry AccordionTitle="General Settings" />
     </VerticalTabPage>
     <VerticalTabPage Text="Third page">
         <h2>Page 3</h2>

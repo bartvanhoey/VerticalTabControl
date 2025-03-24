@@ -1,0 +1,19 @@
+<div class="row mb-2">
+    <div class="col-6">
+        <label for="@FieldId">@Label</label>
+    </div>
+    <div class="col-6">
+        @ChildContent
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Label { get; set; } = string.Empty;
+
+    [Parameter]
+    public string FieldId { get; set; } = string.Empty;
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}
