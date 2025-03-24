@@ -4,25 +4,24 @@ namespace VerticalTabControlApp.Components;
 
 public class VerticalTabControlBase : ComponentBase
 {
-[Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
 
-public TabPage? ActivePage { get; private set; }
-protected readonly List<TabPage?> Pages = [];
+    public VerticalTabPage? ActivePage { get; private set; }
+    protected readonly List<VerticalTabPage?> Pages = [];
 
-internal void AddPage(TabPage? tabPage)
-{
-    Pages.Add(tabPage);
-    if (Pages.Count == 1)
-        ActivePage = tabPage;
-    StateHasChanged();
-}
+    internal void AddPage(VerticalTabPage? tabPage)
+    {
+        Pages.Add(tabPage);
+        if (Pages.Count == 1)
+            ActivePage = tabPage;
+        StateHasChanged();
+    }
 
-protected string GetActiveClass(TabPage? page) => page == ActivePage ? "active" : "";
+    protected string GetActiveClass(VerticalTabPage? page) => page == ActivePage ? "active" : "";
 
-protected void ActivatePage(TabPage? page)
-{
-    ActivePage = page;
-    StateHasChanged();
-}
-
+    protected void ActivatePage(VerticalTabPage? page)
+    {
+        ActivePage = page;
+        StateHasChanged();
+    }
 }

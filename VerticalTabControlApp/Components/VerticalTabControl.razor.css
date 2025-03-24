@@ -18,3 +18,11 @@
 .nav-pills .tab-nav-link {
     border-radius: var(--bs-nav-pills-border-radius);
 }
+
+.custom{
+    margin-left: 10px;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: whitesmoke;
+}
