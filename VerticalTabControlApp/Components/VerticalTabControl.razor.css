@@ -7,10 +7,10 @@
     text-decoration: none;
     background: 0 0;
     border: 0;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 
-.nav-pills .tab-nav-link.active, .nav-pills .show>.tab-nav-link {
+.nav-pills .tab-nav-link.active, .nav-pills .show > .tab-nav-link {
     color: var(--bs-nav-pills-link-active-color);
     background-color: gray;
 }
@@ -19,10 +19,16 @@
     border-radius: var(--bs-nav-pills-border-radius);
 }
 
-.custom{
-    margin-left: 10px;
-    border: 1px solid whitesmoke;
+.custom {
+    border: 1px solid var(--bs-body-bg);
     border-radius: 5px;
     padding: 5px;
-    background-color: whitesmoke;
+    background-color: var(--bs-body-bg);
+}
+
+.custom-row {
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    padding: 5px;
+    width: 70%;
 }

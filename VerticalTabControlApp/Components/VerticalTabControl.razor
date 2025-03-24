@@ -1,6 +1,7 @@
 ﻿@inherits VerticalTabControlBase
-<div class="row">
-    <div class="col-md-2 custom">
+
+<div class="row custom-row">
+    <div class="col-md-3 custom">
         <ul class="nav nav-pills flex-column">
             @foreach (var tabPage in Pages)
             {
@@ -11,10 +12,9 @@
             }
         </ul>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-9 pt-1">
         <CascadingValue Value="this">
             @ChildContent
         </CascadingValue>
     </div>
 </div>
-

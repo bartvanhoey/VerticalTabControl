@@ -80,7 +80,7 @@
                                 <InputCheckbox @bind-Value="@_model.IsShutdownAfterSoundingWasStopped" />
                             </SettingsRow>
 
-                            <SettingsRow Label="Delay (min)" FieldId="idDelay">  ">
+                            <SettingsRow Label="Delay (min)" FieldId="idDelay">
                                 <InputNumber @bind-Value="@_model.DelayInMinutes" class="form-control" />
                             </SettingsRow>
                         }
@@ -91,7 +91,7 @@
         }
     </div>
     <div class="row mb-2">
-        <div class="col-12 bg-light">
+        <div class="col-12 custom-info">
             <label class="fw-bold" >@InfoTitle</label>
             <br>
             <label >@InfoDescription</label>
