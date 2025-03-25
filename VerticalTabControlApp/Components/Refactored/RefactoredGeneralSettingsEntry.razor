@@ -1,4 +1,3 @@
-
 <h3>@AccordionTitle</h3>
 
 <EditForm EditContext="@_editContext">
@@ -19,69 +18,84 @@
                         @if (item.Title == General)
                         {
                             <SettingsRow Label="Default data path" FieldId="@IdDefaultDataPath">
-                                <InputText @onfocus='()=>OnFocus(IdDefaultDataPath)' @bind-Value="@_model.DefaultDataPath" type="text" class="form-control" />
+                                <InputText @onfocus='()=>OnFocus(IdDefaultDataPath)'
+                                           @bind-Value="@_model.DefaultDataPath" type="text" class="form-control"/>
                             </SettingsRow>
 
-                            <SettingsRow Label="Backup ascent RTSO file additionally" FieldId="idBackupAscentRtso">
-                                <InputCheckbox @bind-Value="@_model.IsBackupAscentRtso" />
+                            <SettingsRow Label="Backup ascent RTSO file additionally" FieldId="idBackupAscentRtso"
+                                         Type="checkbox">
+                                <InputCheckbox class="form-check-input" @bind-Value="@_model.IsBackupAscentRtso"/>
                             </SettingsRow>
 
-                            <SettingsRow Label="Backup ascent zip file additionally" FieldId="idBackupZipFile">
-                                <InputCheckbox @bind-Value="@_model.IsBackupZipFile" />
+                            <SettingsRow Label="Backup ascent zip file additionally" FieldId="idBackupZipFile"
+                                         Type="checkbox">
+                                <InputCheckbox class="form-check-input" @bind-Value="@_model.IsBackupZipFile"/>
                             </SettingsRow>
 
                             <SettingsRow Label="Directory" FieldId="idDirectory">
-                                <InputText @bind-Value="@_model.Directory" type="text" class="form-control" />
+                                <InputText @bind-Value="@_model.Directory" type="text" class="form-control"/>
                             </SettingsRow>
 
-                            <SettingsRow Label="Use raw data validation before the ascent" FieldId="idUseRawDataValidation">
-                                <InputCheckbox @bind-Value="@_model.IsRawDataValidationBeforeAscent" />
+                            <SettingsRow Label="Use raw data validation before the ascent"
+                                         FieldId="idUseRawDataValidation" Type="checkbox">
+                                <InputCheckbox class="form-check-input"
+                                               @bind-Value="@_model.IsRawDataValidationBeforeAscent"/>
                             </SettingsRow>
 
-                            <SettingsRow Label="Adjust System Time by GPS" FieldId="idAdjustSystemTimeByGps">
-                                <InputCheckbox @bind-Value="@_model.IsAdjustSystemTimeByGps" />
+                            <SettingsRow Label="Adjust System Time by GPS" FieldId="idAdjustSystemTimeByGps"
+                                         Type="checkbox">
+                                <InputCheckbox class="form-check-input" @bind-Value="@_model.IsAdjustSystemTimeByGps"/>
                             </SettingsRow>
-                            
-                            <SettingsRow Label="Adjust System Time by NTP Server" FieldId="idAdjustSystemTimeByNtpServer">
-                                <InputCheckbox @bind-Value="@_model.IsAdjustSystemTimeByNtp" />
+
+                            <SettingsRow Label="Adjust System Time by NTP Server"
+                                         FieldId="idAdjustSystemTimeByNtpServer" Type="checkbox">
+                                <InputCheckbox class="form-check-input" @bind-Value="@_model.IsAdjustSystemTimeByNtp"/>
                             </SettingsRow>
-                            
+
                             <SettingsRow Label="NTP Server" FieldId="idNtpServer">
-                                <InputText @bind-Value="@_model.NtpServer"  type="text" class="form-control" />
+                                <InputText @bind-Value="@_model.NtpServer" type="text" class="form-control"/>
                             </SettingsRow>
-                            
+
                             <SettingsRow Label="MenuType" FieldId="idMenuType">
-                                <InputText @bind-Value="@_model.MenuType"  type="text" class="form-control" />
+                                <InputText @bind-Value="@_model.MenuType" type="text" class="form-control"/>
                             </SettingsRow>
-                            
+
                             <SettingsRow Label="Number of sondes" FieldId="idNumberOfSondes">
-                                <InputNumber @bind-Value="@_model.NumberOfSondes" class="form-control" />
+                                <InputNumber @bind-Value="@_model.NumberOfSondes" class="form-control"/>
                             </SettingsRow>
-                            
-                            <SettingsRow Label="Repeat ascent if necessary" FieldId="idRepeatAscentIfNecessary"> 
-                                <InputCheckbox @bind-Value="@_model.IsRepeatAscentIfNecessary" />
+
+                            <SettingsRow Label="Repeat ascent if necessary" FieldId="idRepeatAscentIfNecessary"
+                                         Type="checkbox">
+                                <InputCheckbox class="form-check-input"
+                                               @bind-Value="@_model.IsRepeatAscentIfNecessary"/>
                             </SettingsRow>
                         }
 
                         @if (item.Title == StartDetectionSettings)
                         {
-                            <SettingsRow Label="Allow adjusting detected start time" FieldId="idAllowAdjustingDetectedStartTime"> 
-                                <InputCheckbox @bind-Value="@_model.IsAllowAddingDetectedStartTime" />
+                            <SettingsRow Label="Allow adjusting detected start time"
+                                         FieldId="idAllowAdjustingDetectedStartTime" Type="checkbox">
+                                <InputCheckbox class="form-check-input"
+                                               @bind-Value="@_model.IsAllowAddingDetectedStartTime"/>
                             </SettingsRow>
-                            
-                            <SettingsRow Label="Open ground data window after start was..." FieldId="idOpenGroundDataWindowAfterStart"> 
-                                <InputCheckbox @bind-Value="@_model.IsOpenGroundDataWindowAfterStart" />
+
+                            <SettingsRow Label="Open ground data window after start was..."
+                                         FieldId="idOpenGroundDataWindowAfterStart" Type="checkbox">
+                                <InputCheckbox class="form-check-input"
+                                               @bind-Value="@_model.IsOpenGroundDataWindowAfterStart"/>
                             </SettingsRow>
                         }
 
                         @if (item.Title == ShutdownSettings)
                         {
-                            <SettingsRow Label="Shut down after sounding was stopped" FieldId="idShutdownAfterSoundingWasStopped">  
-                                <InputCheckbox @bind-Value="@_model.IsShutdownAfterSoundingWasStopped" />
+                            <SettingsRow Label="Shut down after sounding was stopped"
+                                         FieldId="idShutdownAfterSoundingWasStopped" Type="checkbox">
+                                <InputCheckbox class="form-check-input"
+                                               @bind-Value="@_model.IsShutdownAfterSoundingWasStopped"/>
                             </SettingsRow>
 
                             <SettingsRow Label="Delay (min)" FieldId="idDelay">
-                                <InputNumber @bind-Value="@_model.DelayInMinutes" class="form-control" />
+                                <InputNumber @bind-Value="@_model.DelayInMinutes" class="form-control"/>
                             </SettingsRow>
                         }
 
@@ -92,9 +106,9 @@
     </div>
     <div class="row mb-2">
         <div class="col-12 custom-info">
-            <label class="fw-bold" >@InfoTitle</label>
+            <label class="fw-bold">@InfoTitle</label>
             <br>
-            <label >@InfoDescription</label>
+            <label>@InfoDescription</label>
         </div>
     </div>
 </EditForm>

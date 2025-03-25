@@ -4,19 +4,36 @@
     background-color: #f7f7f7;
 }
 
-/*.accordion-button {*/
-/*    !*background-color: var(--bs-accordion-active-bg);*!*/
-/*    background-color: green !important;*/
-/*    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);*/
-/*}*/
-
 .accordion-button:not(.collapsed) {
     background-color: #6bdff0 !important;
     box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
 }
 
-/* Add custom focus styles */
 .accordion-button:focus {
-    outline: 2px solid #05a4d6;  /* Blue outline */
+    outline: 2px solid #05a4d6; /* Blue outline */
     box-shadow: 0 0 5px rgba(5, 164, 214, 0.25); /* Custom shadow */
 }
+
+::deep .form-check-input:checked {
+    background-color: green !important;
+    border-color: #0a3622 !important;
+}
+
+::deep .form-check-input:focus {
+    background-color: green !important;
+    border-color: #0a3622 !important;
+}
+
+::deep .form-check-input[type=checkbox] {
+    border-radius: .25em;
+}
+
+::deep .form-check-input:focus {
+    border-color: green;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(1,73,72,.25);
+}
+
+
+
+

@@ -2,7 +2,7 @@
     <div class="col-6">
         <label for="@FieldId">@Label</label>
     </div>
-    <div class="col-6">
+    <div class="col-6 @(Type == "checkbox" ? "text-center" : "")">
         @ChildContent
     </div>
 </div>
@@ -13,7 +13,10 @@
 
     [Parameter]
     public string FieldId { get; set; } = string.Empty;
-
+    
+    [Parameter]
+    public string Type { get; set; } = string.Empty;
+    
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
 }

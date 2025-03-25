@@ -39,9 +39,8 @@
                                 <div class="col-6">
                                     <label for="idBackupZipFile">Backup ascent zip file additionally </label>
                                 </div>
-                                <div class="col-6">
-                                    <InputCheckbox @bind-Value="@Model.IsBackupZipFile" type="text"
-                                                   id="idBackupZipFile"/>
+                                <div class="col-6 text-center">
+                                    <InputCheckbox  @bind-Value="@Model.IsBackupZipFile" type="text" id="idBackupZipFile"/>
                                 </div>
                             </div>
                             <div class="row mb-2">
@@ -127,7 +126,7 @@
                                     <label for="idAllowAdjustingDetectedStartTime">Allow adjusting detected start time</label>
                                 </div>
                                 <div class="col-6">
-                                    <InputCheckbox @bind-Value="@Model.IsAllowAddingDetectedStartTime"  type="text"
+                                    <InputCheckbox @bind-Value="@Model.IsAllowAddingDetectedStartTime" type="text"
                                                    id="idAllowAdjustingDetectedStartTime"/>
                                 </div>
                             </div>
